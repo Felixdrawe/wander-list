@@ -20,13 +20,47 @@ function App() {
       setItems([]);
     }
   };
+
+  const handleResetTtems = () => {
+    if (window.confirm('Are you sure you want to reset to initial items?')) {
+      setItems(initialItems);
+    }
+  };
+
+  const handleMarkAllPacked = () => {
+    setItems((prevItems) => prevItems.map((item) => ({ ...item, packed: true })));
+  };
+  const handleMarkAllUnpacked = () => {
+    setItems((prevItems) => prevItems.map((item) => ({ ...item, packed: false })));
+  };
+
+  const handleItemPacked = (id) => {
+    setItems((prevItems) =>
+      prevItems.map((item) => (item.id === id ? { ...item, packed: !item.packed } : item))
+    );
+  };
+
+  const handleItemRemove = (id) => {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
-        <ItemList initialItems={items} />
-        <Sidebar onAddItem={handleAddItem} onRemoveAllItems={handleRemoveAllItems} />
+        <ItemList
+          initialItems={items}
+          onItemPacked={handleItemPacked}
+          onRemoveItem={handleItemRemove}
+        />
+        <Sidebar
+          onAddItem={handleAddItem}
+          onRemoveAllItems={handleRemoveAllItems}
+          onResetItems={handleResetTtems}
+          onMarkAllPacked={handleMarkAllPacked}
+          onMarkAllUnpacked={handleMarkAllUnpacked}
+        />
       </main>
       <Footer />
     </>

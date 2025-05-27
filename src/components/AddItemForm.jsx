@@ -36,6 +36,8 @@ export default function AddItemForm({ onAddItem }) {
         value={itemText}
         onChange={handleChange}
         ref={inputRef}
+        id="new-item"
+        name="new-item"
       />
       <Button>Add item to list</Button>
     </form>

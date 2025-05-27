@@ -1,12 +1,22 @@
 import Button from './Button';
 
-export default function ButtonGroup() {
+import { buttonGroup } from '../lib/constants';
+
+export default function ButtonGroup({ onRemoveAllItems }) {
+  const handleOnClick = (text) => {
+    if (text === 'Remove all items') {
+      onRemoveAllItems();
+      
+    }
+  };
+
   return (
     <section className="button-group">
-      <Button type="secondary">Mark all as complete</Button>
-      <Button type="secondary">Mark all as incomplete</Button>
-      <Button type="secondary">Reset to initial</Button>
-      <Button type="secondary">Remove all items</Button>
+      {buttonGroup.map((text) => (
+        <Button key={text} type="secondary" click={() => handleOnClick(text)}>
+          {text}
+        </Button>
+      ))}
     </section>
   );
 }

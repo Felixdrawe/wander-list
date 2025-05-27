@@ -9,25 +9,24 @@ import { initialItems } from '../lib/constants';
 
 function App() {
   const [items, setItems] = useState(initialItems);
-  const [itemText, setItemText] = useState('');
 
   const handleAddItem = (text) => {
     const newItem = { id: uuidv4(), name: text, packed: false };
     setItems([...items, newItem]);
   };
 
+  const handleRemoveAllItems = () => {
+    if (window.confirm('Are you sure you want to remove all items?')) {
+      setItems([]);
+    }
+  };
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
         <ItemList initialItems={items} />
-        <Sidebar
-          items={items}
-          onAddItem={handleAddItem}
-          itemText={itemText}
-          setItemText={setItemText}
-        />
+        <Sidebar onAddItem={handleAddItem} onRemoveAllItems={handleRemoveAllItems} />
       </main>
       <Footer />
     </>

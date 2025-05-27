@@ -6,7 +6,6 @@ export default function ButtonGroup({ onRemoveAllItems }) {
   const handleOnClick = (text) => {
     if (text === 'Remove all items') {
       onRemoveAllItems();
-      
     }
   };
 

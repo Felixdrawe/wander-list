@@ -1,20 +1,30 @@
+import { useState, useRef, useEffect } from 'react';
 import Button from './Button';
 
-export default function AddItemForm({ onAddItem, itemText = '', setItemText }) {
+export default function AddItemForm({ onAddItem }) {
+  const [itemText, setItemText] = useState('');
+  const inputRef = useRef(null);
+
+  // Focus the input field when the component mounts
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (!setItemText || typeof setItemText !== 'function') {
-      console.error('setItemText is not a function');
-      return;
-    }
-
-    if (itemText && itemText.trim()) {
+    if (itemText) {
       onAddItem(itemText.trim());
       setItemText(''); // Clear the input after submission
+      // Re-focus the input after submission
+      inputRef.current.focus();
     } else {
-      console.error('Item name cannot be empty');
+      alert('Item name cannot be empty');
+      inputRef.current.focus();
     }
+  };
+
+  const handleChange = (e) => {
+    setItemText(e.target.value);
   };
 
   return (
@@ -23,14 +33,9 @@ export default function AddItemForm({ onAddItem, itemText = '', setItemText }) {
       <input
         type="text"
         placeholder="Item name"
-        value={itemText || ''}
-        onChange={(e) => {
-          if (setItemText && typeof setItemText === 'function') {
-            setItemText(e.target.value);
-          } else {
-            console.error('setItemText is not a function');
-          }
-        }}
+        value={itemText}
+        onChange={handleChange}
+        ref={inputRef}
       />
       <Button>Add item to list</Button>
     </form>

@@ -1,5 +1,3 @@
-
-
 export default function ItemList({ initialItems }) {
   return (
     <ul>

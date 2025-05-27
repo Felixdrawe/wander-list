@@ -1,11 +1,11 @@
 import AddItemForm from './AddItemForm';
 import ButtonGroup from './ButtonGroup';
 
-export default function Sidebar({ items, onAddItem, itemText, setItemText }) {
+export default function Sidebar({ onAddItem, onRemoveAllItems }) {
   return (
     <div className="sidebar">
-      <AddItemForm onAddItem={onAddItem} itemText={itemText} setItemText={setItemText} />
-      <ButtonGroup />
+      <AddItemForm onAddItem={onAddItem} />
+      <ButtonGroup onRemoveAllItems={onRemoveAllItems} />
     </div>
   );
 }

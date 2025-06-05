@@ -1,6 +1,5 @@
 import AddItemForm from './AddItemForm';
 import ButtonGroup from './ButtonGroup';
-import './Sidebar.css';
 
 export default function Sidebar({
   onAddItem,

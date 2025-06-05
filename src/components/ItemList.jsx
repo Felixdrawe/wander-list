@@ -1,11 +1,12 @@
+import EmptyView from './EmptyView';
 import Item from './Item';
-import './ItemList.css';
 
-export default function ItemList({ initialItems, onItemPacked, onRemoveItem }) {
+export default function ItemList({ items, onItemPacked, onRemoveItem }) {
   return (
     <div className="item-list">
+      {items.length === 0 && <EmptyView />}
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item
             key={item.id}
             id={item.id}

@@ -2,6 +2,11 @@ export default function Item({ id, name, packed, onItemPacked, onRemoveItem }) {
   const handleOnChange = () => {
     onItemPacked(id);
   };
+
+  const handleRemove = () => {
+    onRemoveItem(id);
+  };
+
   return (
     <li className="item">
       <label>
@@ -14,7 +19,7 @@ export default function Item({ id, name, packed, onItemPacked, onRemoveItem }) {
         />
         {name}
       </label>
-      <button onClick={() => onRemoveItem(id)}>❌</button>
+      <button onClick={handleRemove}>❌</button>
     </li>
   );
 }

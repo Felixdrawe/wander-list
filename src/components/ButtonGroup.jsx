@@ -1,25 +1,24 @@
 import Button from './Button';
 import { buttonGroup } from '../lib/constants';
+import { useItemsContext } from '../lib/hooks';
 
-export default function ButtonGroup({
-  onRemoveAllItems,
-  onResetItems,
-  onMarkAllPacked,
-  onMarkAllUnpacked,
-}) {
+export default function ButtonGroup() {
+  const { handleRemoveAllItems, handleResetTtems, handleMarkAllPacked, handleMarkAllUnpacked } =
+    useItemsContext();
+
   const handleOnClick = (text) => {
     switch (text) {
       case 'Remove all items':
-        onRemoveAllItems();
+        handleRemoveAllItems();
         break;
       case 'Reset to initial':
-        onResetItems();
+        handleResetTtems();
         break;
       case 'Mark all as complete':
-        onMarkAllPacked();
+        handleMarkAllPacked();
         break;
       case 'Mark all as incomplete':
-        onMarkAllUnpacked();
+        handleMarkAllUnpacked();
         break;
       default:
         // Handle unexpected text

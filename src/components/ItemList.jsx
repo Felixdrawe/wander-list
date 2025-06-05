@@ -1,22 +1,60 @@
 import EmptyView from './EmptyView';
 import Item from './Item';
+import Select from 'react-select';
+import { useState, useMemo } from 'react';
+import { useItemsContext } from '../lib/hooks';
 
-export default function ItemList({ items, onItemPacked, onRemoveItem }) {
+const sortOptions = [
+  { value: 'name', label: 'Sort by Name' },
+  { value: 'packed', label: 'Sort by Packed Status' },
+  { value: 'unpacked', label: 'Sort by Unpacked' },
+];
+
+export default function ItemList() {
+  const [sortBy, setSortBy] = useState(sortOptions[0]);
+  const { items, handleItemPacked, handleItemRemove } = useItemsContext();
+
+  const sortedItems = useMemo(() => {
+    return [...items].sort((a, b) => {
+      switch (sortBy.value) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'packed':
+          return b.packed - a.packed; // Packed items first
+        case 'unpacked':
+          return a.packed - b.packed; // Unpacked items first
+        default:
+          return 0;
+      }
+    });
+  }, [items, sortBy]);
+
   return (
-    <div className="item-list">
+    <ul className="item-list">
       {items.length === 0 && <EmptyView />}
-      <ul>
-        {items.map((item) => (
-          <Item
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            packed={item.packed}
-            onItemPacked={onItemPacked}
-            onRemoveItem={onRemoveItem}
+
+      {items.length > 0 ? (
+        <section className="sorting">
+          <Select
+            options={sortOptions}
+            placeholder="Sort items..."
+            value={sortBy}
+            onChange={setSortBy}
+            isClearable
           />
-        ))}
-      </ul>
-    </div>
+        </section>
+      ) : null}
+
+      {sortedItems.map((item) => (
+        <Item
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          packed={item.packed}
+          onItemPacked={handleItemPacked}
+          onRemoveItem={handleItemRemove}
+        />
+      ))}
+    </ul>
   );
 }

@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { initialItems } from '../lib/constants';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ItemsContext = createContext();
 
 export default function ItemsContextProvider({ children }) {

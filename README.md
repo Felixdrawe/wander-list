@@ -1,11 +1,9 @@
 # WanderList
 
-<div align="center">
-  <img src="https://img.shields.io/badge/React-19-%2361DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" height="35" />
-  <img src="https://img.shields.io/badge/Vite-%23646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" height="35" />
-  <img src="https://img.shields.io/badge/Zustand-%23000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE2IDhDOC4yNjggOCAyIDE0LjI2OCAyIDIyczYuMjY4IDE0IDE0IDE0czE0LTYuMjY4IDE0LTE0UzIzLjczMiA4IDE2IDh6bTkgMTJjMCAxLjEwNS0uODk1IDItMiAyYy0uNzQgMC0xLjM4NS0uNDA0LTEuNzI5LTEuMDAzYy0xLjE3NC44MzctMi43NzYgMS4zMDMtNC40NTggMS4zMDNjLTEuODUzIDAtMy42MTEtLjU2OC00Ljg1NC0xLjU2MmMtLjMzMy41NjItLjkzNS45NDItMS42MjUuOTQyYy0xLjA1IDAtMS45LTAuODUtMS45LTEuOXMuODUtMS45IDEuOS0xLjljLjU4OSAwIDEuMTEzLjI2OSAxLjQ2My42ODVjMS4xOTQtLjg0OSAyLjc3MS0xLjMxMiA0LjQ0MS0xLjMxMmMxLjc2MiAwIDMuMzI1LjQ4MyA0LjQ4NCAxLjM3Yy4zNDgtLjQ0NS44OTMtLjczMyAxLjUwNy0uNzMzYzEuMTA1IDAgMiAuODk1IDIgMnoiLz48L3N2Zz4=" alt="Zustand" height="35" />
-  <img src="https://img.shields.io/badge/ESLint-%234B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" height="35" />
-</div>
+<img src="https://img.shields.io/badge/React-19-%2361DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" height="30" />
+<img src="https://img.shields.io/badge/Vite-%23646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" height="30" />
+<img src="https://img.shields.io/badge/Zustand-%23805A3B?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE2IDhDOC4yNjggOCAyIDE0LjI2OCAyIDIyczYuMjY4IDE0IDE0IDE0czE0LTYuMjY4IDE0LTE0UzIzLjczMiA4IDE2IDh6bTkgMTJjMCAxLjEwNS0uODk1IDItMiAyYy0uNzQgMC0xLjM4NS0uNDA0LTEuNzI5LTEuMDAzYy0xLjE3NC44MzctMi43NzYgMS4zMDMtNC40NTggMS4zMDNjLTEuODUzIDAtMy42MTEtLjU2OC00Ljg1NC0xLjU2MmMtLjMzMy41NjItLjkzNS45NDItMS42MjUuOTQyYy0xLjA1IDAtMS45LTAuODUtMS45LTEuOXMuODUtMS45IDEuOS0xLjljLjU4OSAwIDEuMTEzLjI2OSAxLjQ2My42ODVjMS4xOTQtLjg0OSAyLjc3MS0xLjMxMiA0LjQ0MS0xLjMxMmMxLjc2MiAwIDMuMzI1LjQ4MyA0LjQ4NCAxLjM3Yy4zNDgtLjQ0NS44OTMtLjczMyAxLjUwNy0uNzMzYzEuMTA1IDAgMiAuODk1IDIgMnoiLz48L3N2Zz4=" alt="Zustand" height="30" />
+<img src="https://img.shields.io/badge/ESLint-%234B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" height="30" />
 
 A modern React packing list application to help travelers organize their belongings, built with Vite and Zustand for state management.
 
@@ -15,7 +13,7 @@ A modern React packing list application to help travelers organize their belongi
 
 - ✅ **Interactive Checklist:** Easily check off items as you pack them
 - 🔄 **Sorting Options:** Sort your items by name, packed status, or unpacked items first
-- 💾 **Persistent Storage:** Your packing list is saved locally and persists between sessionsƒ
+- 💾 **Persistent Storage:** Your packing list is saved locally and persists between sessions
 - 🧹 **Bulk Actions:** Mark all items as complete/incomplete or clear your list with a single click
 - 🔄 **Reset Functionality:** Reset to the initial items list whenever needed
 - 📱 **Responsive Design:** Works seamlessly across desktop and mobile devices
@@ -34,8 +32,8 @@ A modern React packing list application to help travelers organize their belongi
       <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
       <br>JavaScript
     </td>
-    <td width="100">
-      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjUiIGhlaWdodD0iNjUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjOEI1QzJGIiBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMHMxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptNCA4LjhjMCAuOC0uNjcgMS41LTEuNSAxLjVjLS41NCAwLTEuMDItLjMtMS4yNy0uNzVDMTIuMzUgMTIuMTIgMTEuMjkgMTIuNSAxMC4xIDEyLjVjLTEuMjUgMC0yLjQyLS40Mi0zLjI1LTEuMTVjLS4yMy40LS42NC43LTEuMTUuN2MtLjc1IDAtMS4zOC0uNTYtMS4zOC0xLjI1cy42My0xLjI1IDEuMzgtMS4yNWMuNDIgMCAuOC4yIDEuMDUuNWMuODUtLjYgMi4wMi0uOTggMy4yNS0uOThjMS4yNCAwIDIuNDIuMzggMy4yNS45OGMuMjUtLjMuNjMtLjUgMS4wNS0uNWMuODMgMCAxLjUuNjcgMS41IDEuNXoiLz48L3N2Zz4=" alt="Zustand" width="65" height="65" />
+    <td width="100" align="center">
+      <img src="https://repository-images.githubusercontent.com/180328715/fca49300-e7f1-11ea-9f51-cfd949b31560" alt="Zustand" height="65" />
       <br>Zustand
     </td>
   </tr>

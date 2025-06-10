@@ -21,7 +21,7 @@ export const useItemsStore = create(
           return { items: newItems };
         });
       },
-      toggleItemPacked: (id) => {
+      toggleItem: (id) => {
         set((state) => {
           const newItems = state.items.map((item) => {
             if (item.id === id) {
@@ -33,7 +33,7 @@ export const useItemsStore = create(
           return { items: newItems };
         });
       },
-      removeAllItems: () => {
+      clearItems: () => {
         if (window.confirm('Are you sure you want to remove all items?')) {
           set(() => ({ items: [] }));
         }
@@ -43,7 +43,7 @@ export const useItemsStore = create(
           set(() => ({ items: initialItems }));
         }
       },
-      markAllPacked: () => {
+      markAllAsComplete: () => {
         set((state) => {
           const newItems = state.items.map((item) => {
             return { ...item, packed: true };
@@ -52,7 +52,7 @@ export const useItemsStore = create(
           return { items: newItems };
         });
       },
-      markAllUnpacked: () => {
+      markAllAsIncomplete: () => {
         set((state) => {
           const newItems = state.items.map((item) => {
             return { ...item, packed: false };

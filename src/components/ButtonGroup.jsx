@@ -3,24 +3,24 @@ import { buttonGroup } from '../lib/constants';
 import useItemsStore from '../stores/itemsStore';
 
 export default function ButtonGroup() {
-  const markAllPacked = useItemsStore((state) => state.markAllPacked);
-  const markAllUnpacked = useItemsStore((state) => state.markAllUnpacked);
-  const removeAllItems = useItemsStore((state) => state.removeAllItems);
+  const markAllAsComplete = useItemsStore((state) => state.markAllAsComplete);
+  const markAllAsIncomplete = useItemsStore((state) => state.markAllAsIncomplete);
+  const clearItems = useItemsStore((state) => state.clearItems);
   const resetItems = useItemsStore((state) => state.resetItems);
 
   const handleOnClick = (text) => {
     switch (text) {
       case 'Remove all items':
-        removeAllItems();
+        clearItems();
         break;
       case 'Reset to initial':
         resetItems();
         break;
       case 'Mark all as complete':
-        markAllPacked();
+        markAllAsComplete();
         break;
       case 'Mark all as incomplete':
-        markAllUnpacked();
+        markAllAsIncomplete();
         break;
       default:
         // Handle unexpected text

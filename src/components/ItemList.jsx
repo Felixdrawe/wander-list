@@ -13,7 +13,7 @@ const sortOptions = [
 export default function ItemList() {
   const [sortBy, setSortBy] = useState(sortOptions[0]);
   const items = useItemsStore((state) => state.items);
-  const toggleItemPacked = useItemsStore((state) => state.toggleItemPacked);
+  const toggleItem = useItemsStore((state) => state.toggleItem);
   const removeItem = useItemsStore((state) => state.removeItem);
 
   const sortedItems = useMemo(() => {
@@ -22,9 +22,9 @@ export default function ItemList() {
         case 'name':
           return a.name.localeCompare(b.name);
         case 'packed':
-          return b.packed - a.packed; // Packed items first
+          return b.packed - a.packed;
         case 'unpacked':
-          return a.packed - b.packed; // Unpacked items first
+          return a.packed - b.packed;
         default:
           return 0;
       }
@@ -53,7 +53,7 @@ export default function ItemList() {
           id={item.id}
           name={item.name}
           packed={item.packed}
-          onItemPacked={toggleItemPacked}
+          onItemPacked={toggleItem}
           onRemoveItem={removeItem}
         />
       ))}
